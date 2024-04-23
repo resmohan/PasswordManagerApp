@@ -1,0 +1,32 @@
+.navArea{
+    background-color: #829cba;
+    grid-area: navLeft;
+}
+.navLinks{
+    background-color: #829cba;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    grid-area: navRight;
+}
+.link{
+    color: #f4d1cb;
+    text-decoration: none;
+}
+.link:hover{
+    background-color: rgb(96, 112, 118);
+    cursor: pointer;
+    font-weight: bold;
+}
+.navLinks a.active {
+    background-color:rgb(96, 112, 118);
+}
+.welcome{
+    margin-left: 50px;
+}
+.image{
+    height: 35px;
+    width: 35px;
+}

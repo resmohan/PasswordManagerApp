@@ -1,0 +1,21 @@
+.pageOutline{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+        "navLeft navRight"
+        "main main";
+    grid-template-rows: 15% 85%; 
+    grid-template-columns: 65% 35%;   
+    background-color: rgb(198, 208, 243);
+    color: rgb(42, 91, 133);
+    font-family: fantasy;
+    overflow: scroll;
+}
+
+@media(max-width: 940px){
+    .pageOutline{
+        grid-template-rows: 10% 90%; 
+        grid-template-columns: 10% 90%;
+    }
+}

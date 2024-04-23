@@ -1,0 +1,14 @@
+.home{
+    grid-area: main;
+    overflow: scroll;
+}
+.homeContent{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.credits{
+    margin-top: 30px;
+    align-self: flex-start;
+}

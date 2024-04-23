@@ -1,0 +1,26 @@
+.register{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: main;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+}
+.label{
+    margin-top: 15px;
+}
+.submit{
+    margin-top: 20px;
+    color: rgb(42, 91, 133);
+    align-self: flex-end;
+    font-family: fantasy;
+}
+.errorMsg{
+    color: red;
+    margin-top: 15px;
+}
