@@ -19,6 +19,10 @@ function findByUserNames(usernameArr){
     return userPasswordModel.find({username: {'$in': usernameArr}}).sort('username').exec();
 }
 
+function findByUserNamesAndUrl(usernameArr, urlValue){
+   return userPasswordModel.find({username: {'$in': usernameArr}, urlValue: {'$regex': urlValue, '$options': 'i'}}).sort('username').exec();
+}
+
 function updateUserPassword(id, userPassword){
     return userPasswordModel.findOneAndUpdate({_id:id}, userPassword)
 }
@@ -32,6 +36,7 @@ module.exports = {
     findById,
     findByUserName,
     findByUserNames,
+    findByUserNamesAndUrl,
     updateUserPassword,
     deleteUserPassword
 }

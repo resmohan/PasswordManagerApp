@@ -50,6 +50,8 @@ router.get('/', async function(request, response){
         return response.send("You need to be logged in to query user passwords!")
     }
 
+    const urlValue = request.query.urlValue;//filter by url value
+
     try{
         let usernameArr =[]
         usernameArr.push(username);//add the logged in user as well
@@ -66,7 +68,14 @@ router.get('/', async function(request, response){
             usernameArr.push(shareRequestResp[i].requester)
         }
 
-        const findUserPswdResponse = await userPasswordModel.findByUserNames(usernameArr);
+        // const findUserPswdResponse = await userPasswordModel.findByUserNames(usernameArr);
+        let findUserPswdResponse;
+        if(urlValue){
+            findUserPswdResponse = await userPasswordModel.findByUserNamesAndUrl(usernameArr, urlValue);
+        }
+        else{
+            findUserPswdResponse = await userPasswordModel.findByUserNames(usernameArr);
+        }
         return response.send(findUserPswdResponse);
     }catch(error){
         response.status(400);

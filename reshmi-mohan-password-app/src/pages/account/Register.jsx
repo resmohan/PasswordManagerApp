@@ -18,9 +18,9 @@ export default function Register(){
     async function isUserLoggedIn(){  
         try{            
             const resp = await axios.get('/api/users/loggedIn')
-            //user already logged in; redirect to home page
+            //user already logged in; redirect to password manager page
             if(resp.data.username){
-                navigate('/')
+                navigate('/manage')
             }
         }catch (error){
         }
